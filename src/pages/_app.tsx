@@ -1,6 +1,6 @@
 import type { AppProps } from 'next/app'
 
-function MyApp({ pageProps, Component }: AppProps) {
+function MyApp({ pageProps, Component }: AppProps): JSX.Element {
   return (
     <Component {...pageProps} />
   )

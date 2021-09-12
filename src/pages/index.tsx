@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 
-function Home<NextPage>() {
+const Home:NextPage = () => {
   return (
     <h1>Hello</h1>
   )
