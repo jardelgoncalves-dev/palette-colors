@@ -32,9 +32,29 @@ export const Details = styled.p`
   padding: 0 16px;
 
   font-style: normal;
-  font-weight: ${({ theme }) => theme.typography.weight.xLight};
+  font-weight: ${({ theme }) => theme.typography.weight.bold};
   font-size: ${({ theme }) => theme.typography.sizes.sm};
   line-height: ${({ theme }) => theme.typography.lineHeight.sm};
+
+  span {
+    font-weight: ${({ theme }) => theme.typography.weight.regular};
+    position: relative;
+    padding-left: 24px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      height: 4px;
+      width: 4px;
+      background-color: ${({ theme }) => theme.colors.primary.main};
+      border-radius: ${({ theme }) => theme.shapes.borderRadius.sm};
+
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+      margin-left: -12px;
+    }
+  }
 `
 
 export const ColorChip = styled.div<ColorChipProp>`
