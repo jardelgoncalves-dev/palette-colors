@@ -22,4 +22,15 @@ export const typography = {
     base: '24px',
     md: '32px',
   },
+  weight: {
+    thin: 100,
+    xLight: 200,
+    light: 300,
+    regular: 400,
+    medium: 500,
+    semibold: 600,
+    bold: 700,
+    xBold: 800,
+    black: 900,
+  },
 } as const
