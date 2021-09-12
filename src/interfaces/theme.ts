@@ -17,5 +17,6 @@ export type Colors = {
   card: {
     background: string
     paragraph: string
+    border: string
   }
 }

@@ -16,5 +16,6 @@ export const colors: Colors = {
   card: {
     background: '#fff',
     paragraph: '#575757',
+    border: 'rgb(0 0 0 / 11%)',
   },
 } as const
