@@ -1,6 +1,6 @@
 export const sizes = {
   navbar: '80px',
-  header: '320px',
+  header: '240px',
   input: '56px',
   card: '358px',
   portView: '1150px',
