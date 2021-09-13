@@ -18,6 +18,14 @@ export const colors: Colors = {
     paragraph: '#575757',
     border: 'rgb(0 0 0 / 11%)',
   },
+  modal: {
+    overlay: 'rgba(0, 0, 0, 0.5)',
+    background: '#fff',
+  },
+  input: {
+    background: '#f7f7f7',
+    placeholder: '#b5b5b5',
+  },
   button: {
     white: {
       main: 'rgba(255, 255, 255, 0.35)',

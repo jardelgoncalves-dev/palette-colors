@@ -19,6 +19,17 @@ export type Colors = {
     paragraph: string
     border: string
   }
+
+  input: {
+    background: string
+    placeholder: string
+  }
+
+  modal: {
+    overlay: string
+    background: string
+  }
+
   button: {
     white: {
       main: string
