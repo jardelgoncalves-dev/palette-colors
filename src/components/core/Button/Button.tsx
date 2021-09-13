@@ -5,6 +5,7 @@ type ButtonProps = {
   type?: 'button' | 'submit'
   onClick?: () => void
   themeColor?: 'white' | 'primary'
+  disabled?: boolean
 }
 
 function Button({
@@ -12,12 +13,14 @@ function Button({
   type,
   onClick,
   themeColor,
+  disabled,
 }: ButtonProps): JSX.Element {
   return (
     <S.Wrapper
       onClick={onClick}
       themeColor={themeColor}
       type={type || 'button'}
+      disabled={!!disabled}
     >
       {label}
     </S.Wrapper>
