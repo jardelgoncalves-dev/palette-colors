@@ -3,6 +3,10 @@ import styled from 'styled-components'
 export const Wrapper = styled.div`
   display: flex;
   align-items: flex-start;
+
+  ${({ theme }) => theme.breakpoints.lessThan('medium')`
+    flex-direction: column;
+  `};
 `
 
 export const WrapperSelecteds = styled.div`
