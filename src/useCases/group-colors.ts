@@ -1,5 +1,5 @@
 import { GroupColor } from 'interfaces/group-color'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import api from 'services/api'
 
 type UseNewGroupColorsProps = {
@@ -22,4 +22,22 @@ export function useNewGroupColors(): UseNewGroupColorsProps {
   }
 
   return { isPending, handleNewGroupColors }
+}
+
+type UseFetchGroupColorsProps = {
+  groupColors: GroupColor[]
+  fetchGroupColors: () => Promise<void>
+}
+
+export function useFetchGroupColors(): UseFetchGroupColorsProps {
+  const [groupColors, setGroupColors] = useState<GroupColor[]>([])
+
+  async function fetchGroupColors() {
+    api.get('colors').then((response) => setGroupColors(response.data.colors))
+  }
+
+  useEffect(() => {
+    fetchGroupColors()
+  }, [])
+  return { groupColors, fetchGroupColors }
 }

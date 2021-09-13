@@ -3,36 +3,27 @@ import FormNewGroupColors from 'components/presentation/home/FormNewGroupColors'
 import NewGroupColorsModal from 'components/presentation/home/NewGroupColorsModal'
 
 import { useSettingsContext } from 'contexts/settings.context'
-import { useNewGroupColors } from 'useCases/group-colors'
+import { useFetchGroupColors, useNewGroupColors } from 'useCases/group-colors'
 
 import type { SubmitData } from 'components/presentation/home/FormNewGroupColors/FormNewGroupColors'
-import { useEffect, useState } from 'react'
-import api from 'services/api'
-import { GroupColor } from 'interfaces/group-color'
 import ListColorGroup from 'components/presentation/home/ListColorGroup'
 
 function Home(): JSX.Element {
-  const [groupsColors, setGroupColors] = useState<GroupColor[]>([])
-  const { isNewColorsGroupOpen, setIsNewColorsGroupOpen } = useSettingsContext()
+  const { isNewColorsGroupOpen, setIsNewColorsGroupOpen, setIsBlockScroll } =
+    useSettingsContext()
   const { handleNewGroupColors, isPending } = useNewGroupColors()
-
-  function fetchColors() {
-    api.get('colors').then((res) => setGroupColors(res.data.colors))
-  }
-
-  useEffect(() => {
-    fetchColors()
-  }, [])
+  const { fetchGroupColors, groupColors } = useFetchGroupColors()
 
   async function handleSubmit(data: SubmitData) {
     await handleNewGroupColors(data)
+    await fetchGroupColors()
     setIsNewColorsGroupOpen(false)
-    await fetchColors()
+    setIsBlockScroll(false)
   }
 
   return (
     <Layout>
-      <ListColorGroup groups={groupsColors} />
+      <ListColorGroup groups={groupColors} />
       <NewGroupColorsModal
         isOpen={isNewColorsGroupOpen}
         onRequestClose={() => setIsNewColorsGroupOpen(false)}
