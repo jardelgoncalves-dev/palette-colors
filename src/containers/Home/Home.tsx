@@ -25,7 +25,7 @@ function Home(): JSX.Element {
   }, [])
 
   async function handleSubmit(data: SubmitData) {
-    handleNewGroupColors(data)
+    await handleNewGroupColors(data)
     setIsNewColorsGroupOpen(false)
     await fetchColors()
   }
