@@ -6,7 +6,6 @@ type NavbarProps = {
   logoTo?: string
 }
 
-import Logo from 'assets/logo.png'
 import Button from '../Button'
 import { useSettingsContext } from 'contexts/settings.context'
 
@@ -19,7 +18,7 @@ function Navbar({ logoTo }: NavbarProps): JSX.Element {
       <S.Wrapper>
         <Link href={logoTo || '/'}>
           <a>
-            <img src={Logo} alt="Logo" />
+            <img src="/logo.png" alt="Logo" />
           </a>
         </Link>
         <Button
