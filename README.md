@@ -1,14 +1,24 @@
-# Palette colors
+<div align="center">
+  <img src="./public/favicon.png" />
+  <h2>Palette Colors</h2>
+  <p>an application for you to create groups with your favorite colors</p>
+</div>
+<hr>
+<br>
+<br>
 
-
-## Ferramentas e Bibliotecas
+## Tools and Libraries
 - React.js
 - Next.js
 - react-color
 - react-modal
+- react-hook-form
+- nanoid
 - styled-components
 - polished
 - styled-media-query
+- next-images
+- next-compose-plugins
 - axios
 - Typescript
 - eslint-config-airbnb
@@ -24,3 +34,10 @@
 - prettier
 - husky
 - commitlint
+
+<br>
+
+## Run Project
+```bash
+yarn dev #or npm run dev
+```
