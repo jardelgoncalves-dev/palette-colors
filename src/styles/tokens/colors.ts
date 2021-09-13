@@ -18,4 +18,14 @@ export const colors: Colors = {
     paragraph: '#575757',
     border: 'rgb(0 0 0 / 11%)',
   },
+  button: {
+    white: {
+      main: 'rgba(255, 255, 255, 0.35)',
+      hover: 'rgba(255, 255, 255, 0.2)',
+    },
+    primary: {
+      main: '#5C3BFE',
+      hover: '#856FEE',
+    },
+  },
 } as const

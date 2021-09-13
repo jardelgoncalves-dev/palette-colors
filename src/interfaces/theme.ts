@@ -19,4 +19,14 @@ export type Colors = {
     paragraph: string
     border: string
   }
+  button: {
+    white: {
+      main: string
+      hover: string
+    }
+    primary: {
+      main: string
+      hover: string
+    }
+  }
 }
