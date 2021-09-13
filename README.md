@@ -3,7 +3,6 @@
   <h2>Palette Colors</h2>
   <p>an application for you to create groups with your favorite colors</p>
 </div>
-<hr>
 <br>
 <br>
 
