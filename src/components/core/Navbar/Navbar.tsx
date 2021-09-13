@@ -1,15 +1,19 @@
 import Link from 'next/link'
 
-import type { WithChildren } from 'interfaces/children'
 import * as S from './Navbar.styles'
 
-type NavbarProps = WithChildren & {
+type NavbarProps = {
   logoTo?: string
 }
 
 import Logo from 'assets/logo.png'
+import Button from '../Button'
+import { useSettingsContext } from 'contexts/settings.context'
 
-function Navbar({ logoTo, children }: NavbarProps): JSX.Element {
+function Navbar({ logoTo }: NavbarProps): JSX.Element {
+  const { setIsNewColorsGroupOpen, isNewColorsGroupOpen, setIsBlockScroll } =
+    useSettingsContext()
+
   return (
     <S.Container>
       <S.Wrapper>
@@ -18,7 +22,14 @@ function Navbar({ logoTo, children }: NavbarProps): JSX.Element {
             <img src={Logo} alt="Logo" />
           </a>
         </Link>
-        {children}
+        <Button
+          label="Adicionar grupo de cor"
+          themeColor="white"
+          onClick={() => {
+            setIsNewColorsGroupOpen(!isNewColorsGroupOpen)
+            setIsBlockScroll(true)
+          }}
+        />
       </S.Wrapper>
     </S.Container>
   )
