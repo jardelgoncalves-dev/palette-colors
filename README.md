@@ -36,6 +36,31 @@
 
 <br>
 
+## How to contribute?
+- Install [git-flow](https://github.com/nvie/gitflow/wiki/Installation)
+- To configure git-flow run the command `git flow init`
+- to create a feature (access the `develop` branch) `git flow feature start <feature-name>`
+
+### Generating a release
+Go to the develop branch and run the command
+```bash
+git flow release start "v<number-version>" # git flow release start "v1.1.0"
+```
+change the `version` field in `package.json` and commit it. Then run the command to finalize the release:
+```bash
+git flow release finish #or git flow release finish "v1.1.0"
+```
+Then push the `develop` and `main` branch
+```bash
+git push origin develop && git checkout main && git push
+```
+
+Now push the tags
+```bash
+git push origin --tags
+```
+
+
 ## Run Project
 ```bash
 yarn dev #or npm run dev
