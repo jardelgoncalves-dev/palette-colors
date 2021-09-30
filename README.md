@@ -59,7 +59,7 @@ Now push the tags
 ```bash
 git push origin --tags
 ```
-
+more details: [git flow cheatsheet](https://danielkummer.github.io/git-flow-cheatsheet/)
 
 ## Run Project
 ```bash
